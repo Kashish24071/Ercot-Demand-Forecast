@@ -1,0 +1,8 @@
+{
+  "trained_at": "2026-10-26T21:19+00:00",
+  "mape": 0.0429,
+  "baseline_mape": 0.1711,
+  "test_days": 14,
+  "train_rows": 25777,
+  "data_through": "2026-10-26T20:00:00+00:00"
+}
