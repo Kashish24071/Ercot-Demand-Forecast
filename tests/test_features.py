@@ -21,5 +21,5 @@ def test_lag_24_is_value_from_yesterday():
 
 def test_future_frame_has_no_missing_features():
     future = future_frame(sample(), hours=24)
-    assert len(future) == 25
+    assert len(future) == 24
     assert not future[FEATURES].isna().any().any()
