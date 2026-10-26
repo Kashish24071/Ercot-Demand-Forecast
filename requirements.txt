@@ -1,0 +1,10 @@
+pandas
+pyarrow
+requests
+scikit-learn==1.9.1
+joblib
+fastapi
+uvicorn
+httpx
+pytest
+ruff
