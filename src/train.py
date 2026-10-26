@@ -1,6 +1,6 @@
 """Train, evaluate against the current model, and save only if it is no worse."""
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import joblib
@@ -49,7 +49,7 @@ def main() -> None:
     MODEL_PATH.parent.mkdir(exist_ok=True)
     joblib.dump(challenger, MODEL_PATH)
     METRICS_PATH.write_text(json.dumps({
-        "trained_at": datetime.now(timezone.utc).isoformat(timespec="minutes"),
+        "trained_at": datetime.now(UTC).isoformat(timespec="minutes"),
         "mape": round(new_score, 4),
         "baseline_mape": round(baseline, 4),
         "test_days": TEST_DAYS,

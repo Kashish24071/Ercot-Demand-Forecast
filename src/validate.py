@@ -1,6 +1,6 @@
 """Data quality checks. Exits with code 1 if any check fails."""
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import pandas as pd
 
@@ -33,7 +33,7 @@ def check(df: pd.DataFrame) -> list[str]:
 
     # 5. Freshness: the latest data is recent
     latest = df["timestamp"].max()
-    if latest < datetime.now(timezone.utc) - timedelta(hours=72):
+    if latest < datetime.now(UTC) - timedelta(hours=72):
         errors.append(f"data is stale: latest hour is {latest}")
 
     return errors

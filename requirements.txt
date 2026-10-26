@@ -7,4 +7,4 @@ fastapi
 uvicorn
 httpx
 pytest
-ruff
+ruff==0.17.2

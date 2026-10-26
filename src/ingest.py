@@ -1,6 +1,6 @@
 """Download hourly ERCOT demand from the EIA API into data/demand.parquet."""
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 import pandas as pd
@@ -43,7 +43,7 @@ def fetch(start: datetime, end: datetime) -> pd.DataFrame:
 
 
 def main() -> None:
-    end = datetime.now(timezone.utc)
+    end = datetime.now(UTC)
     if DATA_PATH.exists():
         old = pd.read_parquet(DATA_PATH)
         # Re-pull the last 3 days: recent hours can arrive late or be corrected.
