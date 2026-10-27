@@ -2,7 +2,8 @@ name: Data and model pipeline
 
 on:
   schedule:
-    - cron: "23 12 * * *"   # daily at 12:23 UTC (about 6-7 am in Dallas)
+    - cron: "23 12 * * *"   # 7:23 am Dallas (CDT)
+    - cron: "47 22 * * *"   # backup run, 5:47 pm Dallas
   workflow_dispatch:         # adds a "Run workflow" button for manual runs
 
 permissions:
